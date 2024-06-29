@@ -4,8 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-console.log("Hello World");
 ---
 
 <!doctype html>
@@ -13,12 +11,56 @@ console.log("Hello World");
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <style>
+    * {
+      font-family: OpenSauceSans !important; /* <-- fonts */
+    }
+    @font-face {
+      font-family: "OpenSauceSans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/open-sauce-sans/OpenSauceSans-Regular.ttf) format("woff2");
+    }
+    @font-face {
+      font-family: "OpenSauceSans";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(/fonts/open-sauce-sans/OpenSauceSans-Medium.ttf) format("woff2");
+    }
+    @font-face {
+      font-family: "OpenSauceSans";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(/fonts/open-sauce-sans/OpenSauceSans-SemiBold.ttf)
+        format("woff2");
+    }
+    @font-face {
+      font-family: "OpenSauceSans";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(/fonts/open-sauce-sans/OpenSauceSans-Bold.ttf) format("woff2");
+    }
+    @font-face {
+      font-family: "OpenSauceSans";
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url(/fonts/open-sauce-sans/OpenSauceSans-ExtraBold.ttf)
+        format("woff2");
+    }
+  </style>
   <body>
-    <slot />
+    <main class="grid grid-cols-6 gap-5 px-8 py-4">
+      <slot />
+    </main>
   </body>
 </html>

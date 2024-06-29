@@ -1,9 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Chip } from "../components/Chip";
+import { AiFillHeart } from "react-icons/ai";
+import { MdOutlineChurch } from "react-icons/md";
+import { MdOutlineWhatshot } from "react-icons/md";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <p>Hello World</p>
-  </main>
+<Layout title="Avivamiento Yucatán">
+  <nav class="col-span-6 flex justify-between items-center">
+    <img
+      src="/logo.svg"
+      alt="avivamiento yucatán logo"
+      class="h-8 w-auto max-w-none block"
+    />
+    <img
+      src="/icons/close-icon.svg"
+      alt="avivamiento yucatán logo"
+      class="h-6 w-auto max-w-none block"
+    />
+  </nav>
+  <h1
+    class="col-span-6 font-semibold text-[53px] tracking-[-3px] leading-[55px] mt-6"
+  >
+    Llegaste en el momento indicado. <br />
+    Estás en casa
+  </h1>
+  <h2 class="col-span-6 mt-4">
+    Lorem ipsum dolor sit amet consectetur. Ut varius nunc ornare eget. Lacus
+    nec et lectus.
+  </h2>
+  <section class="col-span-6">
+    <h3 class="font-medium mt-4 text-xl">Nosotros</h3>
+    <div class="flex mt-4 ml-[-8px] justify-between">
+      <Chip client:load label={"Pastores"} invertColors
+        ><AiFillHeart slot="Icon" size={20} className="mr-1" /></Chip
+      >
+      <Chip client:load label={"Iglesia"}
+        ><MdOutlineChurch slot="Icon" size={20} className="mr-1" /></Chip
+      >
+      <Chip client:load label={"Creencias"}
+        ><MdOutlineWhatshot slot="Icon" size={20} className="mr-1" /></Chip
+      >
+    </div>
+  </section>
 </Layout>

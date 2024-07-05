@@ -19,7 +19,7 @@ export const Card = React.forwardRef(
         )}
       >
         <span className="text-xl font-medium block mb-3">En su presencia</span>
-        <p className="text-sm mb-6">
+        <p className="text-sm mb-6 leading-6">
           Comparte con nosotros un domingo lleno de poder, milagros, testimonios
           y la manifestación del Espíritu Santo
         </p>

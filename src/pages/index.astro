@@ -6,6 +6,7 @@ import { MdOutlineChurch } from "react-icons/md";
 import { MdOutlineWhatshot } from "react-icons/md";
 import { Button } from "../components/Button";
 import { Testimonials } from "../components/Testimonials";
+import { Carousel } from "../components/Carousel";
 ---
 
 <Layout title="Avivamiento Yucatán">
@@ -31,6 +32,10 @@ import { Testimonials } from "../components/Testimonials";
     Lorem ipsum dolor sit amet consectetur. Ut varius nunc ornare eget. Lacus
     nec et lectus.
   </h2>
+  <section class="col-span-6 mt-6">
+    <h2 class="text-2xl font-medium mb-6">Servicios</h2>
+    <Carousel client:load />
+  </section>
   <section class="col-span-6">
     <h3 class="font-medium mt-4 text-xl">Nosotros</h3>
     <div class="flex mt-4 ml-[-8px] justify-between">

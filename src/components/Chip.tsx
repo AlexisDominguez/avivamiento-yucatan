@@ -14,7 +14,7 @@ export const Chip = (props: IChipProps) => {
   return (
     <div
       className={clsx(
-        "border-2 border-black px-3 py-2 max-w-fit rounded-[37px] flex items-center bg-white hover:bg-gray-50 hover:cursor-pointer",
+        "border-2 border-black px-3 py-2 max-w-fit rounded-[37px] flex items-center bg-white hover:bg-gray-50 hover:cursor-pointer gap-1",
         invertColors && "filter invert",
         small && "py-1"
       )}

@@ -5,10 +5,7 @@ import { IoEllipse } from "react-icons/io5";
 export const Testimonials = () => {
   return (
     <>
-      <div
-        className="relative -mx-2 border-2 border-black rounded-lg"
-        style={{}}
-      >
+      <div className="relative -ml-2 border-2 border-black rounded-lg">
         <div className="relative top-2 left-3 bg-white py-[23px] px-[26px] border-2 border-black rounded-lg">
           <div className="flex justify-between items-center">
             <span className="font-medium">Jane Doe</span>

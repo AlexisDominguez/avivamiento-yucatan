@@ -10,6 +10,11 @@ import { MdOutlineFrontHand } from "react-icons/md";
 import { MdOutlineComment } from "react-icons/md";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowUp } from "react-icons/md";
+
+import { ROUTES } from "../consts/routes";
+import { ListItem } from "./ListItem";
 
 export const SideMenu = () => {
   useDisableScroll();
@@ -29,38 +34,41 @@ export const SideMenu = () => {
         </div>
       </div>
       <ul className="flex flex-col gap-6 px-2 py-1  overflow-auto">
-        <li className="text-2xl flex gap-4 items-center pt-4">
-          <MdOutlineHome />
-          Inicio
-        </li>
-        <li className="text-2xl flex gap-4 items-center">
-          <MdEmojiFlags />
-          Servicios
-        </li>
-        <li className="text-2xl flex gap-4 items-center">
-          <MdTagFaces />
-          Nosotros
-        </li>
-        <li className="text-2xl flex gap-4 items-center">
-          <MdOutlinePermContactCalendar />
-          Contacto
-        </li>
-        <li className="text-2xl flex gap-4 items-center">
-          <MdOutlineFrontHand />
-          Oración
-        </li>
-        <li className="text-2xl flex gap-4 items-center">
-          <MdOutlineComment />
-          Testimonios
-        </li>
-        <li className="text-2xl flex gap-4 items-center">
-          <MdOutlineMenuBook />
-          Biblia
-        </li>
-        <li className="text-2xl flex gap-4 items-center pb-4">
-          <MdOutlineLocationOn />
-          Visítanos
-        </li>
+        <ListItem
+          href={ROUTES.main}
+          classes="pt-4"
+          icon={<MdOutlineHome />}
+          label={"Inicio"}
+        />
+        <ListItem
+          icon={<MdEmojiFlags />}
+          label="Servicios"
+          collapsable
+          subItems={[
+            { label: "Pastores", route: ROUTES.about },
+            { label: "Iglesia", route: ROUTES.about },
+            { label: "En lo que creemos", route: ROUTES.about },
+          ]}
+        />
+        <ListItem
+          collapsable
+          icon={<MdTagFaces />}
+          label={"Nosotros"}
+          subItems={[
+            { label: "Pastores", route: ROUTES.about },
+            { label: "Iglesia", route: ROUTES.about },
+            { label: "En lo que creemos", route: ROUTES.about },
+          ]}
+        />
+        <ListItem icon={<MdOutlinePermContactCalendar />} label="Contacto" />
+        <ListItem icon={<MdOutlineFrontHand />} label={"Oración"} />
+        <ListItem icon={<MdOutlineComment />} label={"Testimonios"} />
+        <ListItem icon={<MdOutlineMenuBook />} label={"Biblia"} />
+        <ListItem
+          classes="pb-4"
+          icon={<MdOutlineLocationOn />}
+          label="Visítanos"
+        />
       </ul>
       <div className="flex justify-center pt-8 pb-11 -mx-8 border-t border-gray-300 px-9">
         <Button filled fullWidth>

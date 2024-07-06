@@ -2,6 +2,8 @@ import React, { type LegacyRef } from "react";
 import { Button } from "./Button";
 import { clsx } from "clsx";
 
+import WorshipImage from "../images/worship.jpeg";
+
 interface ICardProps {
   index: number;
   classes?: string;
@@ -14,9 +16,12 @@ export const Card = React.forwardRef(
         key={index}
         ref={ref}
         className={clsx(
-          "max-w-[320px] min-h-[415px]  px-6 py-4 bg-[url('/images/worship.jpeg')] bg-cover text-white rounded-2xl flex flex-col justify-end",
+          "max-w-[320px] min-h-[415px]  px-6 py-4  bg-cover text-white rounded-2xl flex flex-col justify-end",
           classes
         )}
+        style={{
+          backgroundImage: `url(${WorshipImage.src})`,
+        }}
       >
         <span className="text-xl font-medium block mb-3">En su presencia</span>
         <p className="text-sm mb-6 leading-6">

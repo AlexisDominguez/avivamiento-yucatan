@@ -1,57 +1,10 @@
 ---
-import { AiFillHeart } from "react-icons/ai";
-import { MdOutlineChurch, MdOutlineWhatshot } from "react-icons/md";
-import { Chip } from "../components/Chip";
 import Layout from "../layouts/Layout.astro";
+import { About as AboutSection } from "../modules/about/About";
 ---
 
 <Layout>
   <container class="col-span-6">
-    <div class="flex mt-4 ml-[-8px] justify-between">
-      <Chip client:load label={"Pastores"} invertColors
-        ><AiFillHeart slot="Icon" size={20} /></Chip
-      >
-      <Chip client:load label={"Iglesia"}
-        ><MdOutlineChurch slot="Icon" size={20} /></Chip
-      >
-      <Chip client:load label={"Creencias"}
-        ><MdOutlineWhatshot slot="Icon" size={20} /></Chip
-      >
-    </div>
-    <!-- TODO: Correct center image on pastors face -->
-    <img src="/images/pastors.jpeg" class="mt-8 rounded-[16px]" />
-    <h2 class="text-2xl mt-8 font-medium">José Manuel y Patricia</h2>
-    <h3 class="text-sm mt-2 text-stone-500 mb-9">
-      Pastores fundadores Avivamiento Yucatán
-    </h3>
-    <p class="leading-7 mb-8">
-      Nuestros pastores son los fundadores de Avivamiento Yucatán, un ministerio
-      que inició en el 2023 con la misión de llevar el mensaje de amor,
-      salvación y esperanza de Dios a toda la región. Sin embargo, su
-      trayectoria en el servicio a Dios y a la comunidad se extiende por más de
-      15 años.
-    </p>
-    <p class="leading-7 mb-8">
-      Residiendo en Mérida, Yucatán, nuestros pastores han demostrado un
-      compromiso inquebrantable con la fe cristiana y un profundo amor por la
-      iglesia del Señor. Han trabajado incansablemente para edificar la iglesia
-      y para impactar vidas a través de su ejemplo y liderazgo.
-    </p>
-    <p class="leading-7 mb-8">
-      A lo largo de los años, han dirigido múltiples proyectos de
-      evangelización, discipulado y ayuda comunitaria, siempre guiados por la
-      Palabra de Dios y el deseo de ver a las personas transformadas por Su
-      amor. Su visión para Avivamiento Yucatán es ser un faro de luz y
-      esperanza, un lugar donde cada persona pueda encontrar su propósito en
-      Cristo y experimentar una relación auténtica con Dios.
-    </p>
-    <p class="leading-7 mb-8">
-      Estamos agradecidos por la dedicación y el liderazgo de nuestros pastores,
-      quienes continúan inspirándonos a seguir creciendo en nuestra fe y a vivir
-      vidas que honren a Dios. Bajo la guía del Espíritu Santo, Avivamiento
-      Yucatán se esfuerza por ser una iglesia en amor y acogedora, donde todos
-      son bienvenidos y podemos crecer en el fuego y amor de nuestro Señor
-      Jesucristo.
-    </p>
+    <AboutSection client:load />
   </container>
 </Layout>

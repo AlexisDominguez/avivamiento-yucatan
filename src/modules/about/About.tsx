@@ -1,11 +1,9 @@
-import { MdOutlineChurch, MdOutlineWhatshot } from "react-icons/md";
-import { Button } from "../../components/Button";
-import { ROUTES } from "../../consts/routes";
-import { AiFillHeart } from "react-icons/ai";
-import { Chip } from "../../components/Chip";
 import { useState } from "react";
 import { type Sections } from "../../types/about/about";
 
+import { Chip } from "../../components/Chip";
+import { AiFillHeart } from "react-icons/ai";
+import { MdOutlineChurch, MdOutlineWhatshot } from "react-icons/md";
 import { ABOUT_COPYWRITING } from "../../copywriting/about/ABOUT_COPYWRITING";
 
 const Section = ({ section }: { section: Sections }) => {
@@ -15,17 +13,17 @@ const Section = ({ section }: { section: Sections }) => {
         src={ABOUT_COPYWRITING[section].image}
         className="mt-8 rounded-[16px] h-64 object-cover w-full"
       />
-      <h2 className="text-center text-2xl mt-8 font-medium">
+      <h2 className="text-2xl mt-8 font-medium">
         {ABOUT_COPYWRITING[section].title}
       </h2>
-      <p className="text-center mt-8 leading-7">
-        {ABOUT_COPYWRITING[section].description}
-      </p>
-      <a href={ROUTES.about}>
-        <Button classes="mt-8" fullWidth>
-          Leer más
-        </Button>
-      </a>
+      <h3 className="text-sm mt-2 text-stone-500 mb-9">
+        {ABOUT_COPYWRITING[section].subTitle}
+      </h3>
+      {ABOUT_COPYWRITING[section].paragraphs.map((paragraph) => (
+        <p key={paragraph} className="leading-7 mb-8">
+          {paragraph}
+        </p>
+      ))}
     </div>
   );
 };
@@ -39,7 +37,6 @@ export const About = () => {
 
   return (
     <>
-      <h3 className="font-medium mt-4 text-xl">Nosotros</h3>
       <div className="flex mt-4 ml-[-8px] justify-between">
         <Chip
           label={"Pastores"}

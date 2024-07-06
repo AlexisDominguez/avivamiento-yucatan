@@ -1,13 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Chip } from "../components/Chip";
-import { AiFillHeart } from "react-icons/ai";
-import { MdOutlineChurch } from "react-icons/md";
-import { MdOutlineWhatshot } from "react-icons/md";
 import { Button } from "../components/Button";
 import { Testimonials } from "../components/Testimonials";
 import { Carousel } from "../components/Carousel";
-import { ROUTES } from "../consts/routes";
+import { About } from "../modules/main/About";
 ---
 
 <Layout title="Avivamiento Yucatán">
@@ -26,31 +22,7 @@ import { ROUTES } from "../consts/routes";
     <Carousel client:load />
   </section>
   <section class="col-span-6">
-    <h3 class="font-medium mt-4 text-xl">Nosotros</h3>
-    <div class="flex mt-4 ml-[-8px] justify-between">
-      <Chip client:load label={"Pastores"} invertColors
-        ><AiFillHeart slot="Icon" size={20} /></Chip
-      >
-      <Chip client:load label={"Iglesia"}
-        ><MdOutlineChurch slot="Icon" size={20} /></Chip
-      >
-      <Chip client:load label={"Creencias"}
-        ><MdOutlineWhatshot slot="Icon" size={20} /></Chip
-      >
-    </div>
-    <!-- TODO: Correct center image on pastors face -->
-    <img src="/images/pastors.jpeg" class="mt-8 rounded-[16px]" />
-    <h2 class="text-center text-2xl mt-8 font-medium">
-      José Manuel y Patricia
-    </h2>
-    <p class="text-center mt-8 leading-7">
-      Lorem ipsum dolor sit amet consectetur. Orci lectus lectus aliquam sit
-      potenti integer. Consequat mauris facilisis molestie tellus proin et
-      pellentesque sodales
-    </p>
-    <a href={ROUTES.about}>
-      <Button classes="mt-8" fullWidth>Leer más</Button></a
-    >
+    <About client:load />
   </section>
   <section class="col-span-6">
     <h4 class="text-2xl tracking-tight text-center font-medium mt-16">

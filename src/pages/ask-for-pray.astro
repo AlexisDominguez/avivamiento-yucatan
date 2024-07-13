@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AskForPrayingFrom } from '../modules/ask-for-praying/AskForPrayingForm';
+---
+
+<Layout>
+  <container class="col-span-6 pb-8">
+    <h1 class="text-4xl font-semibold tracking-tighter leading-[44px]">
+      Queremos orar por ti y toda tu familia.
+    </h1>
+    <p class="leading-7 mt-5">
+      Déjanos tus datos para incluirte en nuestras oraciones
+    </p>
+    <AskForPrayingFrom client:load />
+  </container>
+</Layout>
